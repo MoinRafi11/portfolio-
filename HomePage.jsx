@@ -88,7 +88,7 @@ export default function HomePage({ navigate, portfolio }) {
             <span className="section-label">Portfolio — {new Date().getFullYear()}</span>
             <h1 className="hero__headline">
               Hello, I'm <br />
-              <em>{profile.name || "Your Name"}</em>
+              <em>{profile.name || "Moin Rafi"}</em>
             </h1>
             <div className="hero__role">
               <span className="hero__role-prefix">I'm a </span>
@@ -119,7 +119,7 @@ export default function HomePage({ navigate, portfolio }) {
               </div>
               <div className="hero-card__body">
                 <div className="code-line"><span className="c-kw">const</span> <span className="c-var">dev</span> <span className="c-op">=</span> {'{'}</div>
-                <div className="code-line code-indent"><span className="c-key">name</span><span className="c-op">:</span> <span className="c-str">"{profile.name || "Your Name"}"</span><span className="c-op">,</span></div>
+                <div className="code-line code-indent"><span className="c-key">name</span><span className="c-op">:</span> <span className="c-str">"{profile.name || "Moin Rafi"}"</span><span className="c-op">,</span></div>
                 <div className="code-line code-indent"><span className="c-key">role</span><span className="c-op">:</span> <span className="c-str">"{profile.role || "Full-Stack Dev"}"</span><span className="c-op">,</span></div>
                 <div className="code-line code-indent"><span className="c-key">available</span><span className="c-op">:</span> <span className="c-bool">true</span><span className="c-op">,</span></div>
                 <div className="code-line code-indent"><span className="c-key">skills</span><span className="c-op">:</span> <span className="c-op">[</span><span className="c-str">"React"</span><span className="c-op">,</span> <span className="c-str">"Node"</span><span className="c-op">,</span> <span className="c-str">"..."</span><span className="c-op">],</span></div>

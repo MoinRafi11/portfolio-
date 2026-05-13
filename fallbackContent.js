@@ -1,7 +1,7 @@
 export const fallbackPortfolio = {
   profile: {
-    name: "Your Name",
-    initials: "YN",
+    name: "Moin Rafi",
+    initials: "MR",
     role: "Full-Stack Developer",
     bio: [
       "Hi! I'm a passionate full-stack developer based in Jammu & Kashmir, India, with over 5 years of experience crafting scalable web applications and intuitive user interfaces.",
@@ -12,7 +12,7 @@ export const fallbackPortfolio = {
     experience: "5+ Years",
     speciality: "Full-Stack Development",
     languages: "English, Hindi, Urdu",
-    email: "hello@yourportfolio.dev",
+    email: "moinrafi1011@gmail.com",
     timezone: "IST (UTC+5:30)",
     responseTime: "Within 24 hours",
     github: "https://github.com",

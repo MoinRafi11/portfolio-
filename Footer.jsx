@@ -4,7 +4,7 @@ const SOCIALS = [
   { label: "GitHub",   href: "https://github.com",   icon: "GH" },
   { label: "LinkedIn", href: "https://linkedin.com",  icon: "LI" },
   { label: "Twitter",  href: "https://twitter.com",   icon: "TW" },
-  { label: "Email",    href: "mailto:hello@portfolio.dev", icon: "✉" },
+  { label: "Email",    href: "mailto:moinrafi1011@gmail.com", icon: "✉" },
 ];
 
 const QUICK_LINKS = [

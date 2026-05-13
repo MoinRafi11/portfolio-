@@ -100,8 +100,8 @@ The admin can create, update, and delete projects, skill categories, services, a
 
 ## Customisation Checklist
 
-- [ ] Replace **"Your Name"** in `HomePage.jsx` and `AboutPage.jsx`
-- [ ] Update contact email in `ContactPage.jsx` and `Footer.jsx`
+- [x] Replace **"Your Name"** in `HomePage.jsx` and `AboutPage.jsx`
+- [x] Update contact email in `ContactPage.jsx` and `Footer.jsx`
 - [ ] Replace project placeholders in `HomePage.jsx`
 - [ ] Add real profile photo in `AboutPage.jsx` (`bio-avatar__frame`)
 - [ ] Update social links in `Footer.jsx` and `ContactPage.jsx`

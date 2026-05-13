@@ -67,7 +67,7 @@ export default function AboutPage({ navigate, portfolio }) {
             <div className="bio-visual">
               <div className="bio-avatar">
                 <div className="bio-avatar__frame">
-                  <div className="bio-avatar__initials">{profile.initials || "YN"}</div>
+                  <div className="bio-avatar__initials">{profile.initials || "MR"}</div>
                 </div>
                 <div className="bio-avatar__badge">
                   <span className="availability-dot" />

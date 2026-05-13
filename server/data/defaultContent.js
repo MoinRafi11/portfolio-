@@ -1,6 +1,6 @@
 export const defaultProfile = {
-  name: "Your Name",
-  initials: "YN",
+  name: "Moin Rafi",
+  initials: "MR",
   role: "Full-Stack Developer",
   headline: "The Person Behind The Code",
   bio: [
@@ -12,7 +12,7 @@ export const defaultProfile = {
   experience: "5+ Years",
   speciality: "Full-Stack Development",
   languages: "English, Hindi, Urdu",
-  email: "hello@yourportfolio.dev",
+  email: "moinrafi1011@gmail.com",
   timezone: "IST (UTC+5:30)",
   responseTime: "Within 24 hours",
   github: "https://github.com",

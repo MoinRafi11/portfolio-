@@ -94,7 +94,7 @@ export default function ContactPage({ portfolio }) {
                 <h3 className="contact-info__heading">Get in Touch</h3>
                 <div className="contact-details">
                   {[
-                    { icon: "✉", label: "Email",    value: "hello@yourportfolio.dev", href: "mailto:hello@yourportfolio.dev" },
+                    { icon: "✉", label: "Email",    value: profile.email || "moinrafi1011@gmail.com", href: `mailto:${profile.email || "moinrafi1011@gmail.com"}` },
                     { icon: "◎", label: "Location",  value: "Jammu & Kashmir, India" },
                     { icon: "◷", label: "Timezone",  value: "IST (UTC+5:30)" },
                     { icon: "◈", label: "Response",  value: "Within 24 hours" },

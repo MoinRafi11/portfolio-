@@ -10,8 +10,20 @@ import publicRoutes from "./routes/public.js";
 
 const app = express();
 const port = process.env.PORT || 5000;
+const allowedOrigins = [
+  process.env.CLIENT_ORIGIN || "http://localhost:5173",
+  "http://127.0.0.1:5173",
+  "http://localhost:5173",
+];
 
-app.use(cors({ origin: process.env.CLIENT_ORIGIN || "http://localhost:5173" }));
+app.use(cors({
+  origin(origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    }
+    return callback(new Error(`CORS blocked origin: ${origin}`));
+  },
+}));
 app.use(express.json({ limit: "1mb" }));
 app.use(rateLimit({ windowMs: 15 * 60 * 1000, limit: 300 }));
 
