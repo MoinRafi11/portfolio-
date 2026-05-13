@@ -1,0 +1,140 @@
+.admin-page {
+  min-height: 100vh;
+  padding: 8rem 0 5rem;
+  background: var(--bg);
+}
+
+.admin-hero {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.admin-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin-bottom: 1rem;
+}
+
+.admin-layout {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  gap: 1.5rem;
+}
+
+.admin-tabs {
+  display: grid;
+  gap: 0.5rem;
+  align-content: start;
+}
+
+.admin-tabs button,
+.auth-switch {
+  border: 1px solid var(--border);
+  background: var(--bg-2);
+  color: var(--ink-2);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.admin-tabs button.active {
+  color: var(--bg);
+  background: var(--gold);
+}
+
+.admin-workspace {
+  display: grid;
+  gap: 1rem;
+}
+
+.admin-card,
+.admin-row {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.admin-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.admin-card label {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--ink-2);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.admin-card input,
+.admin-card textarea {
+  border: 1px solid var(--border-light);
+  background: var(--bg-2);
+  color: var(--ink);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem;
+  font: inherit;
+  resize: vertical;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.admin-message {
+  color: var(--gold-light);
+}
+
+.admin-list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.admin-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.admin-row div:first-child {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.admin-row span {
+  color: var(--ink-2);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 820px) {
+  .admin-hero,
+  .admin-row {
+    display: grid;
+  }
+
+  .admin-layout,
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
