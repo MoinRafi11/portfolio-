@@ -2,7 +2,7 @@ import { useState } from "react";
 import { apiRequest } from "./api";
 import "./AuthPage.css";
 
-export default function AuthPage({ mode = "login", navigate }) {
+export default function AuthPage({ mode = "login", navigate, onAuthChange }) {
   const [isSignup, setIsSignup] = useState(mode === "signup");
   const [form, setForm] = useState({ name: "", email: "", password: "", otp: "" });
   const [pendingAdmin, setPendingAdmin] = useState(null);
@@ -17,6 +17,7 @@ export default function AuthPage({ mode = "login", navigate }) {
     localStorage.setItem("portfolioToken", data.token);
     localStorage.setItem("portfolioUserRole", data.user.role);
     localStorage.setItem("portfolioUserName", data.user.name);
+    onAuthChange?.(data.user);
     navigate(data.user.role === "admin" ? "admin" : "home");
   };
 

@@ -16,6 +16,11 @@ export default function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [portfolio, setPortfolio] = useState(fallbackPortfolio);
   const [contentStatus, setContentStatus] = useState("loading");
+  const [authUser, setAuthUser] = useState(() => {
+    const role = localStorage.getItem("portfolioUserRole");
+    const name = localStorage.getItem("portfolioUserName");
+    return role ? { role, name } : null;
+  });
 
   const refreshPortfolio = async () => {
     try {
@@ -54,16 +59,16 @@ export default function App() {
       case "about":    return <AboutPage navigate={navigate} portfolio={portfolio} />;
       case "skills":   return <SkillsPage navigate={navigate} portfolio={portfolio} />;
       case "contact":  return <ContactPage portfolio={portfolio} />;
-      case "login":    return <AuthPage mode="login" navigate={navigate} />;
-      case "signup":   return <AuthPage mode="signup" navigate={navigate} />;
-      case "admin":    return <AdminPage navigate={navigate} portfolio={portfolio} refreshPortfolio={refreshPortfolio} />;
+      case "login":    return <AuthPage mode="login" navigate={navigate} onAuthChange={setAuthUser} />;
+      case "signup":   return <AuthPage mode="signup" navigate={navigate} onAuthChange={setAuthUser} />;
+      case "admin":    return <AdminPage navigate={navigate} portfolio={portfolio} refreshPortfolio={refreshPortfolio} onAuthChange={setAuthUser} />;
       default:         return <HomePage navigate={navigate} />;
     }
   };
 
   return (
     <div className="app-root">
-      <Header currentPage={currentPage} navigate={navigate} contentStatus={contentStatus} />
+      <Header currentPage={currentPage} navigate={navigate} contentStatus={contentStatus} authUser={authUser} onAuthChange={setAuthUser} />
       <main className={`page-main ${isTransitioning ? "page-exit" : "page-enter"}`}>
         {renderPage()}
       </main>

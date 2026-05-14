@@ -52,7 +52,7 @@ function toPayload(resource, form) {
   return { ...rest, order: Number(form.order || 0) };
 }
 
-export default function AdminPage({ navigate, portfolio, refreshPortfolio }) {
+export default function AdminPage({ navigate, portfolio, refreshPortfolio, onAuthChange }) {
   const [resource, setResource] = useState("projects");
   const [items, setItems] = useState([]);
   const [profile, setProfile] = useState(portfolio?.profile || {});
@@ -130,6 +130,7 @@ export default function AdminPage({ navigate, portfolio, refreshPortfolio }) {
     localStorage.removeItem("portfolioToken");
     localStorage.removeItem("portfolioUserRole");
     localStorage.removeItem("portfolioUserName");
+    onAuthChange?.(null);
     navigate("home");
   };
 

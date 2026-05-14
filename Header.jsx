@@ -8,10 +8,19 @@ const NAV_LINKS = [
   { id: "contact", label: "Contact" },
 ];
 
-export default function Header({ currentPage, navigate }) {
+export default function Header({ currentPage, navigate, authUser, onAuthChange }) {
   const [scrolled, setScrolled]   = useState(false);
   const [menuOpen, setMenuOpen]   = useState(false);
-  const isAdmin = localStorage.getItem("portfolioUserRole") === "admin";
+  const isAdmin = authUser?.role === "admin";
+  const isLoggedIn = Boolean(authUser);
+
+  const logout = () => {
+    localStorage.removeItem("portfolioToken");
+    localStorage.removeItem("portfolioUserRole");
+    localStorage.removeItem("portfolioUserName");
+    onAuthChange?.(null);
+    navigate("home");
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -49,8 +58,8 @@ export default function Header({ currentPage, navigate }) {
         </nav>
 
         {/* CTA */}
-        <button className="header__cta btn btn-primary" onClick={() => navigate(isAdmin ? "admin" : "login")}>
-          {isAdmin ? "Admin" : "Login"}
+        <button className="header__cta btn btn-primary" onClick={() => (isLoggedIn && !isAdmin ? logout() : navigate(isAdmin ? "admin" : "login"))}>
+          {isAdmin ? "Admin" : isLoggedIn ? "Logout" : "Login"}
         </button>
 
         {/* Mobile Hamburger */}
@@ -80,8 +89,8 @@ export default function Header({ currentPage, navigate }) {
         <button className="btn btn-primary mobile-nav__cta" onClick={() => navigate("contact")}>
           Schedule a Call
         </button>
-        <button className="btn btn-outline mobile-nav__cta" onClick={() => navigate(isAdmin ? "admin" : "login")}>
-          {isAdmin ? "Admin Panel" : "Login"}
+        <button className="btn btn-outline mobile-nav__cta" onClick={() => (isLoggedIn && !isAdmin ? logout() : navigate(isAdmin ? "admin" : "login"))}>
+          {isAdmin ? "Admin Panel" : isLoggedIn ? "Logout" : "Login"}
         </button>
       </div>
     </header>
